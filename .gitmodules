@@ -1,0 +1,6 @@
+[submodule "z88dk"]
+	path = z88dk
+	url = https://github.com/z88dk/z88dk
+[submodule "external_programs/Advent"]
+	path = external_programs/Advent
+	url = https://github.com/Quuxplusone/Advent
