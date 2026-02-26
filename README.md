@@ -32,3 +32,4 @@ External software is in ./external_programs.
 Programs developed for this capstone are in ./internal_programs.
 
 + hello_world: Test text output and compiler.
++ minimum_program: More or less the smallest possible thing you can compile.
