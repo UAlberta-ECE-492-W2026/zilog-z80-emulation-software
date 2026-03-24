@@ -2,21 +2,22 @@
 # assumes z88dk is installed properly
 SHELL := /bin/bash
 
-export NAME:=minimum_program
+export NAME:=test
 export START_ADDR:=0x0100
 export DIS:=z88dk-dis
 export CC:=zcc
 export CC_TARGET:=+z80 -clib=classic
 
 # these -pragmas (alegedly) remove some reserved memory
-# add 	-crt0=crt0.asm  for the custom crt0
-export CC_ARGS:=-mz80_strict -v -m -O3 -create-app \
+# add 	-crt0={ctr0 path}  for a custom crt0
+export CC_ARGS:=-mz80_strict -v -m -O0 -create-app \
  	-pragma-define:CRT_INITIALIZE_BSS=0 \
 	-pragma-define:CRT_ORG_CODE=$(START_ADDR) \
 	-pragma-define:CLIB_EXIT_STACK_SIZE=0 \
 	-pragma-define:CRT_ENABLE_STDIO=0 \
 	-pragma-define:CLIB_FOPEN_MAX=3 \
-	-pragma-define:CRT_ENABLE_COMMANDLINE=0
+	-pragma-define:CRT_ENABLE_COMMANDLINE=0 \
+	-crt0="../crt0.asm"
 
 # any reasonably new python 3 should work. developed with 3.12
 export PY:=python
@@ -27,8 +28,8 @@ export VIVADO_SCRIPT:= ../../scripts/make_vivado_file.py
 
 all: $(NAME).vivado
 
-$(NAME).rom $(NAME).map &: $(NAME).c 
-	$(CC) $(CC_TARGET) $(NAME).c $(CC_ARGS) -o $(NAME).out
+$(NAME).rom $(NAME).map &: $(NAME).asm 
+	$(CC) $(CC_TARGET) $(NAME).asm $(CC_ARGS) -o $(NAME).out
 
 $(NAME).txt: $(NAME).rom $(NAME).map
 	$(DIS) -o $(START_ADDR) -x $(NAME).map $(NAME).rom &> $(NAME).txt;

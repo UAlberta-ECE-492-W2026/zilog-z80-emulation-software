@@ -1,1 +1,1 @@
-The smallest program I can convince z88dk to produce
+The smallest non-trivial program I can convince z88dk to produce
