@@ -1,6 +1,6 @@
 //#include <stdint.h>
 
-volatile char * keyboard_write_address_ptr = (char *) (0xFF00);
+volatile char * keyboard_write_address_ptr = (char *) (0xFFF0);
 
 void put_c(char c) {
     *keyboard_write_address_ptr = c;
