@@ -10,7 +10,7 @@ export CC_TARGET:=+z80 -clib=classic
 
 # these -pragmas (alegedly) remove some reserved memory
 # add 	-crt0=../crt0.asm  for the custom crt0
-export CC_ARGS:=-mz80_strict -v -m -O3 -create-app \
+export CC_ARGS:=-mz80_strict -v -m -O0 -create-app \
  	-pragma-define:CRT_INITIALIZE_BSS=0 \
 	-pragma-define:CRT_ORG_CODE=$(START_ADDR) \
 	-pragma-define:CLIB_EXIT_STACK_SIZE=0 \

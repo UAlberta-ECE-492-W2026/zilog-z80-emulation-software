@@ -3,7 +3,7 @@
 
 volatile char * keyboard_write_address_ptr = (char *) (0xFFF0);
 
-int fputc_cons_native(char c) __naked {
+int fputc_cons_native(char c) {
    *keyboard_write_address_ptr = c;
 }
 
