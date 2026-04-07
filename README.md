@@ -5,7 +5,7 @@ See [our other repo](https://github.com/UAlberta-ECE-492-W2026/zilog-z80-emulati
 
 We use [z88dk v2.4](https://github.com/z88dk/z88dk/tree/v2.4/ext) for the compiler toolchain.
 
-## Instalation and Setup
+## Installation and Setup
 Be sure to clone this repo with `git clone --recursive git@github.com:UAlberta-ECE-492-W2026/zilog-z80-emulation-software.git`. If you did a regular git clone you can update the submodules with `git submodule update --init --recursive`.
 
 You can [install z88dk by following the instructions here](https://github.com/z88dk/z88dk?tab=readme-ov-file#installation). Alternatively you can run the following commands to built it. Note that these assume you are running some version of ubuntu/debian or WSL inside Windows.
