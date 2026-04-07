@@ -29,12 +29,12 @@ void shift_text_up() {
 }
 
 void newline() {
-   if (cursor_position[0] + 1< ROWS) {
-      cursor_position[1] = 0;
-      cursor_position[0]++;
+   if (cursor_position[1] + 1< ROWS) {
+      cursor_position[0] = 0;
+      cursor_position[1]++;
    } else {
       shift_text_up();
-      cursor_position[1] = 0;
+      cursor_position[0] = 0;
    }
 }
 
@@ -45,8 +45,8 @@ void write_to_char_ram(char c) {
       return;
    }
    char_ram[cursor_position[1] * COLUMNS + cursor_position[0]] = c;
-   if (cursor_position[1] + 1 < COLUMNS) {
-      cursor_position[1]++;
+   if (cursor_position[0] + 1 < COLUMNS) {
+      cursor_position[0]++;
    } else {
       newline();
    }
@@ -62,6 +62,10 @@ int fputc_cons_native(char c) {
 }
 
 int main() {
-   printk("Hello, World!\n");
+   printk("0Hello, World!\n");
+   printk("1Hello, World!\n");
+   printk("2Hello, World!\n");
+   printk("3Hello, World!\n");
+   shift_text_up();
    return 0;
 }

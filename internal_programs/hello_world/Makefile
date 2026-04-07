@@ -17,7 +17,7 @@ export CC_ARGS:=-mz80 -v -m -O0 -create-app \
 	-pragma-define:CLIB_FOPEN_MAX=3 \
 	-pragma-define:CRT_ENABLE_STDIO=0 \
 	-pragma-define:CRT_ENABLE_COMMANDLINE=0 \
-	-pragma-define:REGISTER_SP=0xEBFF
+	-pragma-define:REGISTER_SP=0x3FFF
 
 # any reasonably new python 3 should work. developed with 3.12
 export PY:=python

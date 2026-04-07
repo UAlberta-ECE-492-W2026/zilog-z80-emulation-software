@@ -38,5 +38,6 @@ if __name__ == "__main__":
     # should be a path to a .txt as input and a .vivado (really also just text) as output
     # the input should be produced by z88dk-dis
     # the 'magic number' is the number of bytes that fit in the program ram.
-    main(sys.argv[1], sys.argv[2], 60160)
+    #main(sys.argv[1], sys.argv[2], 60160)
+    main(sys.argv[1], sys.argv[2], 16384)
     print("done")
