@@ -17,7 +17,8 @@ export CC_ARGS:=-mz80_strict -v -m -O0 -create-app \
 	-pragma-define:CRT_ENABLE_STDIO=0 \
 	-pragma-define:CLIB_FOPEN_MAX=3 \
 	-pragma-define:CRT_ENABLE_COMMANDLINE=0 \
-	-crt0="../crt0.asm"
+	-pragma-define:REGISTER_SP=0xEBFF
+	#-crt0="../crt0.asm"
 
 # any reasonably new python 3 should work. developed with 3.12
 export PY:=python

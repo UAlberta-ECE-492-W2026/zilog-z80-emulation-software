@@ -24,6 +24,7 @@ def main(input_file, output_file, target_length):
         print("Binary is too big!")
         return
     
+    print("Parsed %d bytes." % len(bytes_to_write))
     bytes_to_write += ['00000000'] * (target_length - len(bytes_to_write))
     print("Write %d bytes as strings to %s" % (len(bytes_to_write), output_file))
 
