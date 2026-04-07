@@ -4,3 +4,6 @@
 [submodule "external_programs/Advent"]
 	path = external_programs/Advent
 	url = https://github.com/Quuxplusone/Advent
+[submodule "external_programs/z80test"]
+	path = external_programs/z80test
+	url = git@github.com:raxoft/z80test.git
