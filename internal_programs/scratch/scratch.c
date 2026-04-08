@@ -7,6 +7,8 @@ int fputc_cons_native(char c) { *keyboard_write_address_ptr = c; }
 
 int main() {
   printf("Hello, World!\n");
+  char *test_str = "goodbye world";
+  printf("this is a test for percent %s", test_str);
   printf(
       "trying to put in a number: %d, there is some text after the expansion",
       7);
