@@ -18,12 +18,12 @@ void shift_text_up() {
    // shift everything down by one. the top line of text is discarded
    for (int r =1; r < ROWS; r++) {
       for (int c=0; c < COLUMNS; c++) {
-         char_ram[r - 1 * COLUMNS + c] = char_ram[r * COLUMNS + c];
+         char_ram[((r - 1) * COLUMNS) + c] = char_ram[r * COLUMNS + c];
       }
    }
    // blank the last line
    for (int c=0; c < COLUMNS; c++) {
-      char_ram[ROWS - 1 * COLUMNS + c] = 0;
+      char_ram[((ROWS - 1) * COLUMNS) + c] = 0;
    }
 }
 
