@@ -58,7 +58,12 @@ int fputc_cons_native(char c) {
 }
 
 int get_char_from_software_keyboard() {
-   return *(software_keyboard_read_address_ptr);
+   char c = 0;
+   while (c == 0) {
+      c = *(software_keyboard_read_address_ptr);
+      *(software_keyboard_read_address_ptr) = 0;
+   }
+   return c;
 }
 
 int fgetc_cons() {

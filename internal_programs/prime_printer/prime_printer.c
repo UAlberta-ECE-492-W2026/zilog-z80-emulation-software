@@ -20,7 +20,7 @@ int is_prime(int p) {
 
 int main() {
 
-   int primes_to_find = 64;
+   int primes_to_find = 256;
    int p = 1;
 
    printf("Printing %d primes starting at %d.\n", primes_to_find, p);
