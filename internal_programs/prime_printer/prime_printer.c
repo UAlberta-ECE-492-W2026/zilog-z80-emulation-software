@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "../print_utils.h"
 
-int is_prime(int p) {
+int is_prime(long int p) {
    if (p == 1) {
       return 0;
    }
@@ -21,12 +21,13 @@ int is_prime(int p) {
 int main() {
 
    int primes_to_find = 256;
-   int p = 1;
+   long int p = 1;
 
-   printf("Printing %d primes starting at %d.\n", primes_to_find, p);
+   //printf("Printing %d primes starting at %d.\n", primes_to_find, p);
+   printf("Printing primes starting at %d.\n", primes_to_find, p);
 
-
-   while (primes_to_find > 0) {
+   while (1) {
+   //while (primes_to_find > 0) {
       //printf("%u\n", p);
       if (is_prime(p)) {
          printf("%d is prime!\n", p);

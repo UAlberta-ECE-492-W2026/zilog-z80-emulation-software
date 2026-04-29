@@ -1,3 +1,6 @@
+#ifndef PRINT_UTILS_H
+#define PRINT_UTILS_H
+
 #define ROWS 60
 #define COLUMNS 80
 
@@ -57,19 +60,21 @@ int fputc_cons_native(char c) {
    return 0;
 }
 
-int get_char_from_software_keyboard() {
+int _fputc_cons_native(char c) {
+   return fputc_cons_native(c);
+}
+
+int fgetc_cons() {
    char c = 0;
    while (c == 0) {
       c = *(software_keyboard_read_address_ptr);
-      *(software_keyboard_read_address_ptr) = 0;
+      *(software_keyboard_read_address_ptr) = 0; // this sends the 'ack' signal to the char buffer so that it can be cleared
    }
    return c;
 }
 
-int fgetc_cons() {
-   return get_char_from_software_keyboard();
+int _fgetc_cons() {
+   return fgetc_cons();
 }
 
-int _fgetc_cons() {
-   return get_char_from_software_keyboard();
-}
+#endif
