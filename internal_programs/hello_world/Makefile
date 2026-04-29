@@ -3,7 +3,7 @@
 SHELL := /bin/bash
 
 export NAME:=hello_world
-export START_ADDR:=0x0100
+export START_ADDR:=0x0000
 export DIS:=z88dk-dis
 export CC:=zcc
 export CC_TARGET:=+z80 -clib=classic
