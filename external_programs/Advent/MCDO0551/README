@@ -1,0 +1,74 @@
+This directory contains the unzipped contents of
+http://miriam-english.org/files/ai-attic/Programs/Classic/Adventure/Adventure.2/advent.shr
+
+The Makefile will invoke f77 (which you can install on Ubuntu
+by running "sudo apt-get install fort77") to compile McDonald's
+data-munger, and then run the munger to convert the plain-text
+ADVDAT into a binary file ADVTXT. Meanwhile, we compile "aamain.f"
+and "asubs.f" into an executable called "adv551". At runtime,
+the executable expects ADVTXT to appear in the current working
+directory.
+
+McDonald's original documentation (circa 1990) is in the file
+"advent.doc" in this directory. The game itself contains the
+version string <Generic Adventure 551 -- Version:6.6, August 1990>.
+
+As McDonald explains, this is a port (from some dialect of Fortran 66
+into portable Fortran 77) and expansion of an earlier "Adventure"
+due originally to David Long and perhaps including some anonymous
+contributions before McDonald acquired it.
+
+Long's 501-point game is for some reason version-numbered "Adventure 5",
+and McDonald's version is therefore numbered "Adventure 6".
+
+This is not to be confused with David Platt's 550-point early-1980s
+expansion, sometimes referred to as "Adventure 3", which exists on a
+completely disjoint branch of the Adventure family tree. (For Platt's
+version, see the directories PLAT0550/ and ODWY0550/.)
+Unlike David Platt, who wrote in a domain-specific language he
+called "A-code" and sacrificed several of the game's simulationist
+aspects for the sake of ease-of-implementation, Long started with
+Woods' original code and preserved much of it, right down to the
+original copious comments.
+
+Compared to the original game, Long's 501-point version added
+the Wumpus, elfin sword, River Styx, Alice puzzle, Altar,
+Winery, natural bridge, Lost River Canyon, Flower Room, and
+the combination safe in the Well House.
+
+McDonald's 551-point version adds a Castle of the Elves; a quartz
+sphere in the Crystal Palace; and a star sapphire in the Star Chamber.
+These puzzles appear to be due to McDonald himself, even though at
+the time he self-deprecatingly claimed to have added only "a small piece
+of game" and even credited the "castle problem" to "an anonymous writer"
+in the in-game "History of Adventure" text.
+
+McDonald may also have removed a dead-end branch which appears in
+the 501-point "Version 5.2/2"; or that branch may have been added
+later, after McDonald's version split from Long's.
+
+Russel Dalenberg's Adventure Family Tree postulates the existence
+of an "Adventure 6.0" on the VAX, referred to as "ANON0551", but
+unless this version was actually authored by McDonald, its existence
+seems questionable to me.
+
+McDonald's game is one of the bases for Robert R. Hall's 501-point [sic]
+C port of "Adventure", done for the Minix project around 1994. Hall's
+port is available here in the HALL0501/ subdirectory.
+
+A 501-point Fortran version (dated "Version:5.2/2, October-79",
+posted to comp.sources.games in May 1990) is available at
+http://cd.textfiles.com/gigagames9308/NET/USENET/VOLUME9/ADVEN
+Unfortunately, this version is not F77-friendly.
+It has no Castle of the Elves; its crystal ball is "opal", not
+"quartz"; it has nothing in the Star Chamber at all (although a
+comment refers to a "sapphire" anyway); and it adds a Haunted
+Chamber to the north of the awkward canyon. The Haunted Chamber
+leads to a "bizarre room" containing a magic word apparently
+designed to bring the room's statues to life, but in Version 5.2/2
+the word is unimplemented. Russel Dalenberg's Adventure Family
+Tree refers to this version as "ANON0501".
+
+Johann "Myrkraverk" Oskarsson ported the above game to Fortran 77
+in 2003; his port is available at
+http://www.ifarchive.org/if-archive/games/source/advent-5.2.2-5.tar.gz
